@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+      </style>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+    </style>
+<style>
+
+.card-container {
+            display: flex;
+            overflow-x: hidden;
+            scroll-snap-type: x mandatory;
+            gap: 105px;
+            padding: 30px;
+            scroll-behavior: smooth;
+        }
+
+        /* Styling individual cards */
+        .card-review {
+            flex: 0 0 200px;
+            width: 100%;
+            max-height: 220px;
+            background-color: #00000036;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            scroll-snap-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards ease-in-out;
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect - scale and shadow */
+        .card-review:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
+        }
+.blob {
+    width: 500px;
+    height: 500px;
+    border-radius: 50% 40% 60% 50%;
+    background-color: #6C63FF;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: blobMove 5s infinite ease-in-out;
+    overflow: hidden;
+}
+@media screen and (max-width: 991px) {
+  .blob{
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 767px) {
+    .blob{
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.blob img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+/* Blob animation */
+@keyframes blobMove {
+    0%, 100% {
+        border-radius: 50% 40% 60% 50%;
+    }
+    50% {
+        border-radius: 60% 50% 40% 60%;
+    }
+}
+.aboutcard{
+    transition: all 1s linear;
+    background-color: #6A4031;
+    color:white;
+
+}
+.aboutcard:hover{
+      transform:translateY(10px);
+}
+.container-package {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.package-card {
+    background-color:#6A4031;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+}
+
+.iconabout {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+ .main-award {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+  transition: all 400ms;
+}
+
+.box-award {
+  flex: 1;
+  height: 100%;
+  transition: all 400ms;
+  cursor: pointer;
+  gap:1;
+  
+}
+.box-award > img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius:16px;
+}
+
+.box-award:nth-child(odd) {
+  translate: 0 -20px;
+}
+.box-award:nth-child(even) {
+  translate: 0 20px;
+}
+
+.main-award .box-award:not(:hover) {
+  filter: grayscale(100%);
+}
+.box-award:hover {
+  flex:4;
+  gap:1;
+}
+
+
+</style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/img/logo.png" alt="Logo" width="100" height="auto">
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span >
+          <i class="fa-solid fa-bars" style="color: #e3e3e3;"></i>
+        </span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="service.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="team.html">Team</a>
+          </li>
+        </ul>
+  
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="about_us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- topic-part -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div style="position: relative;">
+                    <img src="https://i.pinimg.com/originals/b2/f7/f0/b2f7f0a2c903e881161a2f87cba326fb.jpg" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">About Us</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="position: relative;">
+                    <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/services-title-img.jpg" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">About Us</h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="position: relative;">
+                    <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/services-title-img.jpg" class="d-block w-100" height="300px" alt="..."  style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">About Us</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="position: relative;">
+                    <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/team-title-img.jpg" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">Our Services</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- history -->
+     <div class="container-fluid pt-5 pb-5" style="background-color: #000; color:white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 mt-4 d-flex justify-content-center">
+                    <div class="blob">
+                     <img  src="https://html.vecurosoft.com/haarino/demo/assets/img/about/about-6-1.jpg" height="400px" width="100%">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 mt-4 ">
+                    <h3 class="text-center">Reading Our Story</h3>
+                    <div class="text-center"> <img style="filter: brightness(300%);" src="/img/Screenshot_2024-10-08_124104-removebg-preview.png" alt=""> </div>     
+
+                    <p style="font-family:Cormorant; font-size: 20px;">Passion, knowledge and the gift of beauty salon & Barber continues to give the best services in the world. Lorem Ips is simply dummy text of the printing and typesetting industry.
+                        Lorem Ips is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
+                                <div class="card aboutcard" style="width: 12rem;">
+                                    <img src="https://html.vecurosoft.com/haarino/demo/assets/img/team/member-1-2.jpg" class="card-img-top"height="150px">
+                                    <div class="card-body">
+                                      <h5 style="font-family: Tangerine; letter-spacing: 2px; color: white; font-weight: 800;">Founder</h5>
+                                      <p class="card-text" style="font-family:Cormorant; font-size: 20px;">Lorem, ipsum dolor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
+                                <div class="card aboutcard" style="width: 12rem;">
+                                    <img src="https://html.vecurosoft.com/haarino/demo/assets/img/team/member-1-2.jpg" class="card-img-top"height="150px">
+                                    <div class="card-body">
+                                      <h5 style="font-family: Tangerine; letter-spacing: 2px; color: white; font-weight: 800;">Founder</h5>
+                                      <p class="card-text">Lorem, ipsum dolor.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
+                                <div class="card aboutcard" style="width: 12rem;">
+                                    <img src="https://html.vecurosoft.com/haarino/demo/assets/img/team/member-1-2.jpg" class="card-img-top"height="150px">
+                                    <div class="card-body">
+                                      <h5 style="font-family: Tangerine; letter-spacing: 2px; color: white; font-weight: 800;">Founder</h5>
+                                      <p class="card-text">Lorem, ipsum dolor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                
+            </div>
+        </div>
+     </div>
+
+
+     <!-- products -->
+     <div class="container-fluid " style="background-color: #262020;color:white;padding-top: 20px;padding-bottom: 30px;">
+        <h3 class="text-center">Product We Use</h3>
+        <div class="text-center"> <img style="filter: brightness(300%);" src="/img/Screenshot_2024-10-08_124104-removebg-preview.png" alt=""> </div>     
+
+        <div class="row justify-content-center">
+            <div class="col-md-11">
+                <!-- Card container for scrolling -->
+                <div class="card-container" id="cardContainer">
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-1-h.png"  alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-3-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-8-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-8-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-8-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-1-h.png"  alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-3-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-8-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-8-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+                    <div class="card-review p-3 text-center">
+                        <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/client-8-h.png" class="img-fluid" alt="Product 1" style="border-radius: 50%;">
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <!-- awards -->
+     <h3 class="text-center pt-4">Awards</h3>
+     <div class="text-center"> <img style="filter: brightness(300%);" src="/img/Screenshot_2024-10-08_124104-removebg-preview.png" alt=""> </div>     
+
+     <div style="justify-content: center; align-items: center; height: 100vh; display: flex;">
+        
+        <div class="cards-container main-award">
+            <div class="expandable-card box-award">
+                <img src="https://content.jdmagicbox.com/comp/kurnool/q2/9999p8518.8518.160901191840.z8q2/catalogue/veenus-beauty-clinic-and-designer-boutique-rajvihar-kurnool-beauty-parlours-ptdqkupt22.jpg">
+            </div>
+
+            <div class="expandable-card box-award">
+                <img src="img/newabout.webp">
+            </div>
+
+            <div class="expandable-card box-award">
+                <img src="https://www.eyecatchers.in/upload/media/award-2019/awards-2019.jpg">
+            </div>
+
+            <div class="expandable-card box-award">
+                <img src="https://images.pexels.com/photos/20264862/pexels-photo-20264862/free-photo-of-woman-with-miss-tittle.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+            </div>
+
+            <div class="expandable-card box-award">
+                <img src="https://images.pexels.com/photos/11069973/pexels-photo-11069973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+            </div>
+            <div class="expandable-card box-award">
+                <img src="https://images.pexels.com/photos/11069973/pexels-photo-11069973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+            </div>
+            
+        </div>
+     </div>
+    <!-- training pacakage -->
+     <div class="container-fluid" style="background-color: #000;"><br>
+
+        <div class="container">
+            <h3 class="heading text-center" style="color:white;">Our Training Packages</h3>
+            <div class="text-center"> <img style="filter: brightness(300%);" src="/img/Screenshot_2024-10-08_124104-removebg-preview.png" alt=""> </div>     
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 mt-2">
+                    <div class="package-card">
+                        <div class="iconabout">✂️</div>
+                        <h4 style="font-family: Tangerine; letter-spacing: 2px; color: white; font-weight: 800;">Hair styling Course</h4>
+                        <p style="font-family:Cormorant; font-size: 20px;">Learn the basics of hair cutting, styling,spa and advanced techniques.</p>
+                        <div class="price"style="font-family:Cormorant; font-size: 20px;">₹5000</div>
+                        <button class="ash-button">Contact Us</button>
+
+                    </div>
+                
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mt-2">
+                    <div class="package-card">
+                        <div class="iconabout">💆‍♀️</div>
+                        <h4 style="font-family: Tangerine; letter-spacing: 2px; color: white; font-weight: 800;">Facial & Skin Care</h4>
+                        <p style="font-family:Cormorant; font-size: 20px;">Complete facial and skincare course with professional guidance.</p>
+                        <div class="price"style="font-family:Cormorant; font-size: 20px;">₹8000</div>
+                        <button class="ash-button">Contact Us</button>
+                    </div>
+            
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mt-2">
+                    <div class="package-card">
+                        <div class="iconabout">💆‍♀️</div>
+                        <h4 style="font-family: Tangerine; letter-spacing: 2px; color: white; font-weight: 800;">Makeup & Hair Style</h4>
+                        <p style="font-family:Cormorant; font-size: 20px;">Complete facial and skincare course with professional guidance.</p>
+                        <div class="price"style="font-family:Cormorant; font-size: 20px;">₹8000</div>
+                        <button class="ash-button">Contact Us</button>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+     </div>
+
+    
+     <!-- instagram start -->
+  <div class="container-fluid g-0">
+    <div class="row insta g-0">
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118919993_336994814379572_4884935321224357521_nfull.jpg" class="img-fluid" alt="Person in pool">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118853579_945229739290044_8285672200633838232_nfull.jpg" class="img-fluid" alt="Woman's back">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118889935_127828595361486_3010123149326061613_nfull.jpg" class="img-fluid" alt="Bowl of fruit">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118852426_317026369717220_5143444474379499320_nfull.jpg" class="img-fluid" alt="Hands massaging">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+    </div>
+    </div>
+  
+  <!-- footer -->
+    <footer>
+    <div class="footer" style=" z-index: 999999; color: white !important; font-family: Cormorant; ">
+      <div class="contact-section row">
+          <div class="contact col-lg-3 col-md-6 col-sm-12 mt-4" style="font-size: 23px;">
+              <i class="fa fa-headset"></i> <!-- Font Awesome icon -->
+              <span>call us</span>
+              <span class="phone-number">+91-123-456-789</span>
+          </div>
+          <div class="newsletter col-lg-3 col-md-6 col-sm-12 mt-4" style="font-size: 20px;">
+              <span>NEWSLETTER</span>
+              <p>Scrambled it to make a type specimen book.</p>
+          </div>
+          <div class="subscribe col-lg-3 col-md-6 col-sm-12 mt-4">
+              <input type="email" placeholder="Enter your email">
+              <button>SUBSCRIBE</button>
+          </div>
+      </div>
+    </div>
+  
+    <!-- footer -->
+    <div class="container-fluid pt-4 pb-4" style="background-color: #262020;color:white; z-index: 999999; font-family: Cormorant;">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <img src="img/logo.png" class="img-fluid "><br>
+                  <h6 style="color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quo, rem ducimus sint pariatur nam illum sunt architecto </h6>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                <h4>Useful links</h4>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Email us</h6></div><br>
+                <!-- <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Team</h6></div><br> -->
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Services</h6></div><br>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>About us</h6></div><br>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Portfolio</h6></div><br>
+  
+                  
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <h4>Work Hours</h4>
+                    <ul style="list-style: none; font-size: 17px;line-height:40px;">
+                      <li>Weekdays:10AM-9PM </li>
+                      <li>Saturday:10AM-6PM </li>
+                      <li>Sunday:Closed </li>
+  
+                    </ul>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <h4>Get In Touch</h4>
+                  <div style="display:inline-flex"><i class='fas fa-phone pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Call Us: 123-456-7898</h6></div><br>
+                  <div style="display:inline-flex"><i class='fas fa-envelope-open pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Email Us: Support@styling.com</h6></div><br>
+                  <div style="display:inline-flex"><i class='fa fa-fax pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Fax: 123456</h6></div><br>
+  
+              </div>
+          </div>
+      </div>
+    </div>
+    </footer>
+  
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const cardContainer = document.getElementById('cardContainer');
+        let scrollAmount = 0;
+        const cardWidth = 405; // Width of each card + gap (300px width + 105px gap)
+
+        function autoScrollSlider() {
+            // Scroll the container to the next card
+            cardContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            scrollAmount += cardWidth;
+
+            // If reached the end, reset to start
+            if (scrollAmount >= cardContainer.scrollWidth - cardContainer.clientWidth) {
+                setTimeout(() => {
+                    cardContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                    scrollAmount = 0;
+                }, 500); // 2-second pause before resetting
+            }
+        }
+
+        setInterval(autoScrollSlider, 3000); // Scroll every 3 seconds
+    </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.querySelector(".navbar");
+      
+      // Function to handle scroll behavior
+      function handleScroll() {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      }
+    
+      // Function to handle navbar background color based on screen width
+      function handleResize() {
+        if (window.innerWidth <= 991) {
+          navbar.classList.add("small-screen");
+        } else {
+          navbar.classList.remove("small-screen");
+        }
+      }
+    
+      // Initial function calls
+      handleScroll();
+      handleResize();
+    
+      // Event listener for scrolling
+      document.addEventListener("scroll", handleScroll);
+    
+      // Event listener for window resizing
+      window.addEventListener("resize", handleResize);
+    });
+  </script>
+    
+</html>

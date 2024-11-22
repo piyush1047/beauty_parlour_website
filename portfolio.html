@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /*  */
+        .head {
+    display: block;
+    text-align: center;
+    z-index: 99999;
+    position: relative
+  }
+
+  .headingline {
+    color:#fff;
+    letter-spacing: 2px;
+    animation: ac_headline 1s ease-in;
+  }
+
+  
+  .hr {
+    margin-bottom: 60px;
+    border-top: 2px solid #3eb72f;
+    border-radius: 50px;
+    margin-top: 10px;
+    width: 300px;
+    animation: ac_headline_bottom_line 1s ease-in;
+  }
+
+  @keyframes ac_headline {
+    from {
+      opacity: .5;
+      letter-spacing: 80px;
+    }
+
+    to {
+      opacity: 1;
+      letter-spacing: 2px;
+    }
+  }
+
+  @keyframes ac_headline_bottom_line {
+    from {
+      width: 0px;
+    }
+
+    to {
+      width: 300px;
+    }
+  }
+        /*  */
+     .filter-buttons-portfolio {
+            margin-bottom: 30px;
+        }
+
+        .filter-buttons-portfolio .btn {
+            margin-right: 10px;
+        }
+
+        .gallery-item-portfolio {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .gallery-item-portfolio img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-item-portfolio .overlay-portfolio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 87, 34, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item-portfolio:hover .overlay-portfolio {
+            opacity: 1;
+        }
+
+        .overlay-portfolio i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-tabs .portfolio-topics {
+            background-color: #6A4031;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-right: 5px;
+            font-weight: bold;
+            font-family: Tangerine !important;
+
+        }
+
+        .portfolio-tabs .portfolio-topics.active {
+            background-color: #6A4031;
+            color: white;
+            font-family: Tangerine !important;
+
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="/img/logo.png" alt="Logo" width="100" height="auto">
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span >
+          <i class="fa-solid fa-bars" style="color: #e3e3e3;"></i>
+        </span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="service.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="team.html">Team</a>
+          </li>
+        </ul>
+  
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="about_us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+ <!-- topic-part -->
+ <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div style="position: relative;">
+                <img src="https://i.pinimg.com/originals/b2/f7/f0/b2f7f0a2c903e881161a2f87cba326fb.jpg" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                    <h3 style="font-size: 60px;">Portfolio</h3>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div style="position: relative;">
+                <img src="https://framerusercontent.com/images/bzORZr20EgxgYBREHfQwH2DdHek.png" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                    <h3 style="font-size: 60px;">Portfolio</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div style="position: relative;">
+                <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/services-title-img.jpg" class="d-block w-100" height="300px" alt="..."  style="filter: brightness(40%);">
+                <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                    <h3 style="font-size: 60px;">Portfolio</h3>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div style="position: relative;">
+                <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/team-title-img.jpg" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                    <h3 style="font-size: 60px;">Portfolio</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ </div>  
+    <div class="head mb-4 pt-4">
+        <h3 class="">Recent Work</h3>
+        <div class="text-center"> <img style="filter: brightness(300%);" src="/img/Screenshot_2024-10-08_124104-removebg-preview.png" alt=""> </div>     
+
+    </div>
+
+    <div class="container">
+        <ul class="nav nav-tabs portfolio-tabs justify-content-center filter-buttons-portfolio text-center">
+            <li class="nav-item ">
+                <a class="nav-link btn-dark btn portfolio-topics active filter-btn btn btn-info" href="#Skincare">Skincare</a>
+            </li>
+            <li class="nav-item ms-3">
+                <a class="nav-link  portfolio-topics filter-btn" href="#Haircare">Haircare</a>
+            </li>
+            <li class="nav-item ms-3">
+                <a class="nav-link  portfolio-topics filter-btn" href="#Makeup">Makeup</a>
+            </li>
+            
+        </ul>
+
+        <div class="tab-content">
+            <div id="Skincare" class="tab-pane active">
+                <div class="row">
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Manicure</h4>
+                            <p>Skincare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/05/fc/62/05fc621f1187956379f8e2dd3098e6e4.jpg"
+                            alt="BackPack Project">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Pedicure</h4>
+                            <p>Skincare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/48/ab/98/48ab9858b03055e548b6b7a9f2abf894.jpg"
+                            alt="Person getting hair washed">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Body Massage</h4>
+                            <p>Skincare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/cc/d6/00/ccd6001c32b74b8ff514e8ca35be70ec.jpg"
+                            alt="Person getting hair cut">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Body Massage</h4>
+                            <p>Skincare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/d9/0c/26/d90c266c05c130c7ef84419f8590ac52.jpg"
+                            alt="Person getting hair styled">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Pedicure</h4>
+                            <p>Skincare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/e0/d5/b8/e0d5b8233a81eb27e37231b49b60adfa.jpg"
+                            alt="Person getting hair washed">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Manicure</h4>
+                            <p>Skincare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/b8/b1/33/b8b133184cd19032744ca2c86223f1e5.jpg"
+                            alt="Person getting hair cut">
+                    </div>
+                </div>
+            </div>
+            <div id="Haircare" class="tab-pane">
+                <div class="row">
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Colouring</h4>
+                            <p>Haircare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/f4/c9/bc/f4c9bc0c3b32a6c1bba74169b2a413a4.jpg"
+                            alt="BackPack Project">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>straightening</h4>
+                            <p>Haircare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/43/bd/2d/43bd2db35974a52caf37a1d05603da47.jpg"
+                            alt="Person getting hair washed">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Hairspa</h4>
+                            <p>Haircare</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/df/c5/ea/dfc5eaddcebb8f27b3c17598eb84fcfc.jpg"
+                            alt="Person getting hair styled">
+                    </div>
+                </div>
+            </div>
+            <div id="Makeup" class="tab-pane">
+                <div class="row">
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Dull Skin</h4>
+                            <p>Makeup</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/41/c7/98/41c798ddbf35ca78014b935a491fe1b0.jpg"
+                            alt="Person getting hair cut">
+                    </div>
+                    <div class="col-md-4 gallery-item-portfolio">
+                        <div class="overlay-portfolio">
+                            <i class="fas fa-search"></i>
+                            <h4>Fair Skin</h4>
+                            <p>Makeup</p>
+                        </div>
+                        <img src="https://i.pinimg.com/564x/84/64/f3/8464f3897fdc91264c69ec3cfcc71c2f.jpg"
+                            alt="Person getting hair braided">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- instagram start -->
+    <div class="container-fluid g-0">
+    <div class="row insta g-0">
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118919993_336994814379572_4884935321224357521_nfull.jpg" class="img-fluid" alt="Person in pool">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118853579_945229739290044_8285672200633838232_nfull.jpg" class="img-fluid" alt="Woman's back">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118889935_127828595361486_3010123149326061613_nfull.jpg" class="img-fluid" alt="Bowl of fruit">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118852426_317026369717220_5143444474379499320_nfull.jpg" class="img-fluid" alt="Hands massaging">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+    </div>
+    </div>
+  
+  <!-- footer -->
+    <footer>
+    <div class="footer" style=" z-index: 999999; color: white !important; font-family: Cormorant; ">
+      <div class="contact-section row">
+          <div class="contact col-lg-3 col-md-6 col-sm-12 mt-4" style="font-size: 23px;">
+              <i class="fa fa-headset"></i> <!-- Font Awesome icon -->
+              <span>call us</span>
+              <span class="phone-number">+91-123-456-789</span>
+          </div>
+          <div class="newsletter col-lg-3 col-md-6 col-sm-12 mt-4" style="font-size: 20px;">
+              <span>NEWSLETTER</span>
+              <p>Scrambled it to make a type specimen book.</p>
+          </div>
+          <div class="subscribe col-lg-3 col-md-6 col-sm-12 mt-4">
+              <input type="email" placeholder="Enter your email">
+              <button>SUBSCRIBE</button>
+          </div>
+      </div>
+    </div>
+  
+    <!-- footer -->
+    <div class="container-fluid pt-4 pb-4" style="background-color: #262020;color:white; z-index: 999999; font-family: Cormorant;">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <img src="img/logo.png" class="img-fluid "><br>
+                  <h6 style="color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quo, rem ducimus sint pariatur nam illum sunt architecto </h6>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                <h4>Useful links</h4>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Email us</h6></div><br>
+                <!-- <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Team</h6></div><br> -->
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Services</h6></div><br>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>About us</h6></div><br>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Portfolio</h6></div><br>
+  
+                  
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <h4>Work Hours</h4>
+                    <ul style="list-style: none; font-size: 17px;line-height:40px;">
+                      <li>Weekdays:10AM-9PM </li>
+                      <li>Saturday:10AM-6PM </li>
+                      <li>Sunday:Closed </li>
+  
+                    </ul>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <h4>Get In Touch</h4>
+                  <div style="display:inline-flex"><i class='fas fa-phone pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Call Us: 123-456-7898</h6></div><br>
+                  <div style="display:inline-flex"><i class='fas fa-envelope-open pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Email Us: Support@styling.com</h6></div><br>
+                  <div style="display:inline-flex"><i class='fa fa-fax pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Fax: 123456</h6></div><br>
+  
+              </div>
+          </div>
+      </div>
+    </div>
+    </footer>
+  
+        <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
+                const target = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.tab-pane').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.getElementById(target).classList.add('active');
+
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            const cardContainer = document.getElementById('cardContainer');
+            let scrollAmount = 0;
+            const cardWidth = 405; // Width of each card + gap (300px width + 105px gap)
+    
+            function autoScrollSlider() {
+                // Scroll the container to the next card
+                cardContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                scrollAmount += cardWidth;
+    
+                // If reached the end, reset to start
+                if (scrollAmount >= cardContainer.scrollWidth - cardContainer.clientWidth) {
+                    setTimeout(() => {
+                        cardContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                        scrollAmount = 0;
+                    }, 500); // 2-second pause before resetting
+                }
+            }
+    
+            setInterval(autoScrollSlider, 3000); // Scroll every 3 seconds
+        </script>
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const navbar = document.querySelector(".navbar");
+          
+          // Function to handle scroll behavior
+          function handleScroll() {
+            if (window.scrollY > 50) {
+              navbar.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+            }
+          }
+        
+          // Function to handle navbar background color based on screen width
+          function handleResize() {
+            if (window.innerWidth <= 991) {
+              navbar.classList.add("small-screen");
+            } else {
+              navbar.classList.remove("small-screen");
+            }
+          }
+        
+          // Initial function calls
+          handleScroll();
+          handleResize();
+        
+          // Event listener for scrolling
+          document.addEventListener("scroll", handleScroll);
+        
+          // Event listener for window resizing
+          window.addEventListener("resize", handleResize);
+        });
+      </script>
+        
+
+</body>
+
+</html>

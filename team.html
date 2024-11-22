@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cardteam {
+            border: 1px solid rgba(97, 92, 92, 0.276);
+            background-color: rgba(255, 255, 255, 0.948);
+            border-radius: 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            
+        }
+        .cardteam:hover {
+            transform: scale(1.1);
+            transition: 5s;
+        }
+        .cardteam img{
+            border-bottom: 10px solid black;
+            
+        }
+        .otherteamcard:hover {
+            transition: 2s;
+            box-shadow: 1px 1px 8px whitesmoke;
+        }
+        
+    </style>    
+</head>
+<body>
+     <!-- Navbar Section -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/img/logo.png" alt="Logo" width="100" height="auto">
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span >
+          <i class="fa-solid fa-bars" style="color: #e3e3e3;"></i>
+        </span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="service.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="team.html">Team</a>
+          </li>
+        </ul>
+  
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="about_us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hover-effect pe-4" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- topic-part -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div style="position: relative;">
+                    <img src="https://i.pinimg.com/originals/b2/f7/f0/b2f7f0a2c903e881161a2f87cba326fb.jpg" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">Our Team</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="position: relative;">
+                    <img src="https://framerusercontent.com/images/bzORZr20EgxgYBREHfQwH2DdHek.png" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">Our Team</h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="position: relative;">
+                    <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/services-title-img.jpg" class="d-block w-100" height="300px" alt="..."  style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">Our Team</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="position: relative;">
+                    <img src="https://oaza.qodeinteractive.com/wp-content/uploads/2019/01/team-title-img.jpg" class="d-block w-100" height="300px" alt="..." style="filter: brightness(40%);">
+                    <div style="position: absolute; bottom: 30px; right:5%; color: white; text-align:right; width: 100%;">
+                        <h3 style="font-size: 60px;">Our Team</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main content -->
+    <div class="container-fluid  pb-3" style="background-color: #171010;">
+        <div class="container ">
+            <h3 class="text-white text-center pt-4" style=" font-weight: 300;">Our Experts</h3>
+            <div class="text-center"> <img style="filter: brightness(300%);" src="/img/Screenshot_2024-10-08_124104-removebg-preview.png" alt=""> </div>     
+
+            <div class="row ">
+                <!-- Card for Jakulin Farnandez -->
+                
+                <div class="col-md-4 mt-5 d-flex justify-content-center">
+                    <div class="card cardteam" style="width: 18rem;  border-top-left-radius: 31%; border-top-right-radius: 31%;">
+                        <img src="img/owner.jpg" class="card-img-top " width="100%" alt="..." style="border-radius: 50%;  position: relative; top: -19px;">
+                        <div class="card-body " >
+                            <h3 class="card-title text-center text-secondary" style="font-weight: 300;">Owner</h3>
+                            <p class="card-text text-center" style="font-size: 16px; font-weight: 300; font-style: italic;">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste...</p>
+                            <p class="mt-1 text-center" style="font-weight: 400; font-style: italic;">Nicole Anderson</p>
+                            <ul class="list-inline text-center">
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-facebook " style="font-size: 25px; color: black;"></i></a></li>
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-twitter" style="font-size: 25px; color: black;"></i></a></li>
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-instagram" style="font-size: 25px; color: black;"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5 d-flex justify-content-center">
+                    <div class="card cardteam" style="width: 18rem;  border-top-left-radius: 31%; border-top-right-radius: 31%;">
+                        <img src="img/hairart.jpg" class="card-img-top " width="100%" alt="..." style="border-radius: 50%;  position: relative; top: -19px;">
+                        <div class="card-body " >
+                            <h3 class="card-title text-center text-secondary" style="font-weight: 300;">Hair Stylist</h3>
+                            <p class="card-text text-center" style="font-size: 16px; font-weight: 300; font-style: italic;">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste...</p>
+                            <p class="mt-1 text-center" style="font-weight: 400; font-style: italic;">Alison Brie</p>
+                            <ul class="list-inline text-center">
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-facebook " style="font-size: 25px; color: black;"></i></a></li>
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-twitter" style="font-size: 25px; color: black;"></i></a></li>
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-instagram" style="font-size: 25px; color: black;"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5 d-flex justify-content-center">
+                    <div class="card cardteam" style="width: 18rem;  border-top-left-radius: 31%; border-top-right-radius: 31%;">
+                        <img src="img/makeupart.jpg" class="card-img-top " width="100%" alt="..." style="border-radius: 50%;  position: relative; top: -19px;">
+                        <div class="card-body " >
+                            <h3 class="card-title text-center text-secondary" style="font-weight: 300;">Makeup Artist</h3>
+                            <p class="card-text text-center" style="font-size: 16px; font-weight: 300; font-style: italic;">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste...</p>
+                            <p class="mt-1 text-center" style="font-weight: 400; font-style: italic;">Lynda Carter</p>
+                            <ul class="list-inline text-center">
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-facebook " style="font-size: 25px; color: black;"></i></a></li>
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-twitter" style="font-size: 25px; color: black;"></i></a></li>
+                                <li class="list-inline-item"><a href="#" ><i class="fab fa-instagram" style="font-size: 25px; color: black;"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <h3 class="text-white text-center pt-4 pb-3" style=" font-weight: 300;">Other Members</h3>
+            <div class="text-center"> <img style="filter: brightness(300%);" src="/img/Screenshot_2024-10-08_124104-removebg-preview.png" alt=""> </div>     
+
+            <div class="row ">
+                <!-- Card for Jakulin Farnandez -->
+                
+                <div class="col-lg-3  col-md-6 col-sm-12  mt-4 mb-4 d-flex justify-content-center">
+                    <div class="card otherteamcard" style="width: 18rem; border: 2px solid rgba(8, 8, 20, 0.415); border-radius: 10px; ">
+                        <img src="img/ot1.jpg" style="border-radius: 10px;"  alt="" width="100%" >
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <button class="btn btn-light" style="color: whitesmoke; font-size: 22px; font-weight: 300; background-color: rgba(40, 36, 36, 0.748);">Alina Brie</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3  col-md-6 col-sm-12  mt-4 mb-4 d-flex justify-content-center">
+                    <div class="card otherteamcard" style="width: 18rem;border: 2px solid rgba(8, 8, 20, 0.415); border-radius: 10px;">
+                        <img src="img/ot2.jpg" style="border-radius: 10px;"  alt="" width="100%" >
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <button class="btn btn-light" style="color: whitesmoke; font-size: 22px; font-weight: 300; background-color: rgba(40, 36, 36, 0.748);">Alin Brie</button>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-lg-3  col-md-6 col-sm-12  mt-4 mb-4 d-flex justify-content-center">
+                    <div class="card otherteamcard" style="width: 18rem; border: 2px solid rgba(8, 8, 20, 0.415); border-radius: 10px;">
+                        <img src="img/ot3.jpg" style="border-radius: 10px;"  alt="" width="100%" >
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <button class="btn btn-light" style="color: whitesmoke; font-size: 22px; font-weight: 300; background-color: rgba(40, 36, 36, 0.748);">Rayan Brie</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-6 col-sm-12  mt-4 mb-4 d-flex justify-content-center">
+                    <div class="card otherteamcard" style="width: 18rem; border: 2px solid rgba(8, 8, 20, 0.415); border-radius: 10px;">
+                        <img src="img/ot4.jpg" style="border-radius: 10px;"  alt="" width="100%" >
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <button class="btn btn-light" style="color: whitesmoke; font-size: 22px; font-weight: 300; background-color: rgba(40, 36, 36, 0.748);">Alexa Brie</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- instagram start -->
+  <div class="container-fluid g-0">
+    <div class="row insta g-0">
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118919993_336994814379572_4884935321224357521_nfull.jpg" class="img-fluid" alt="Person in pool">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118853579_945229739290044_8285672200633838232_nfull.jpg" class="img-fluid" alt="Woman's back">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118889935_127828595361486_3010123149326061613_nfull.jpg" class="img-fluid" alt="Bowl of fruit">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+  
+      <div class="col-12 col-md-2-4 instaimg">
+        <img src="https://firstsight.design/cherie/spa/wp-content/uploads/sb-instagram-feed-images/118852426_317026369717220_5143444474379499320_nfull.jpg" class="img-fluid" alt="Hands massaging">
+        <i class="fab fa-instagram icon"></i>
+      </div>
+    </div>
+    </div>
+  
+  <!-- footer -->
+    <footer>
+    <div class="footer" style=" z-index: 999999; color: white !important; font-family: Cormorant; ">
+      <div class="contact-section row">
+          <div class="contact col-lg-3 col-md-6 col-sm-12 mt-4" style="font-size: 23px;">
+              <i class="fa fa-headset"></i> <!-- Font Awesome icon -->
+              <span>call us</span>
+              <span class="phone-number">+91-123-456-789</span>
+          </div>
+          <div class="newsletter col-lg-3 col-md-6 col-sm-12 mt-4" style="font-size: 20px;">
+              <span>NEWSLETTER</span>
+              <p>Scrambled it to make a type specimen book.</p>
+          </div>
+          <div class="subscribe col-lg-3 col-md-6 col-sm-12 mt-4">
+              <input type="email" placeholder="Enter your email">
+              <button>SUBSCRIBE</button>
+          </div>
+      </div>
+    </div>
+  
+    <!-- footer -->
+    <div class="container-fluid pt-4 pb-4" style="background-color: #262020;color:white; z-index: 999999; font-family: Cormorant;">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <img src="img/logo.png" class="img-fluid "><br>
+                  <h6 style="color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quo, rem ducimus sint pariatur nam illum sunt architecto </h6>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                <h4>Useful links</h4>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Email us</h6></div><br>
+                <!-- <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Team</h6></div><br> -->
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Services</h6></div><br>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>About us</h6></div><br>
+                <div style="display:inline-flex"><i class='fas fa-angle-double-right pt-1' style='font-size:12px'></i>&nbsp;<h6>Portfolio</h6></div><br>
+  
+                  
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <h4>Work Hours</h4>
+                    <ul style="list-style: none; font-size: 17px;line-height:40px;">
+                      <li>Weekdays:10AM-9PM </li>
+                      <li>Saturday:10AM-6PM </li>
+                      <li>Sunday:Closed </li>
+  
+                    </ul>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4">
+                  <h4>Get In Touch</h4>
+                  <div style="display:inline-flex"><i class='fas fa-phone pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Call Us: 123-456-7898</h6></div><br>
+                  <div style="display:inline-flex"><i class='fas fa-envelope-open pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Email Us: Support@styling.com</h6></div><br>
+                  <div style="display:inline-flex"><i class='fa fa-fax pt-1' style='font-size:12px'></i>&nbsp;&nbsp;<h6>Fax: 123456</h6></div><br>
+  
+              </div>
+          </div>
+      </div>
+    </div>
+    </footer>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const navbar = document.querySelector(".navbar");
+          
+          // Function to handle scroll behavior
+          function handleScroll() {
+            if (window.scrollY > 50) {
+              navbar.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+            }
+          }
+        
+          // Function to handle navbar background color based on screen width
+          function handleResize() {
+            if (window.innerWidth <= 991) {
+              navbar.classList.add("small-screen");
+            } else {
+              navbar.classList.remove("small-screen");
+            }
+          }
+        
+          // Initial function calls
+          handleScroll();
+          handleResize();
+        
+          // Event listener for scrolling
+          document.addEventListener("scroll", handleScroll);
+        
+          // Event listener for window resizing
+          window.addEventListener("resize", handleResize);
+        });
+    </script>
+        
+</body>
+</html>
